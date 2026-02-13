@@ -59,7 +59,7 @@ class report(FPDF):
         y = self.get_y()
 
         # Example voxel fit
-        size_of_image = 150
+        size_of_image = 120
         x=((self.w-size_of_image)/2)
         self.set_font('Arial', '', 9)
         self.set_fill_color(255, 255, 255)
@@ -70,7 +70,7 @@ class report(FPDF):
         y = self.get_y()
 
         # Voxel-wise map results
-        size_of_image = 120
+        # size_of_image = 120
         self.text(10,y, 'Voxel-wise maps:')
         self.ln(1)
         self.image(voxel_maps,x=((self.w-size_of_image)/2), w=size_of_image)

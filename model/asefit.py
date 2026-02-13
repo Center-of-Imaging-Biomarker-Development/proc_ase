@@ -187,8 +187,6 @@ class AseFit():
         ax.set_ylim(np.log(np.min(self._sigvec)*0.95), (self._longtau_fit['popt'][0]*1.01))
         ax.set_ylabel('ln(Signal) (au)')
         ax.legend(loc='upper right', ncols=2, fontsize=6)
-        if data.params['nechoes'] == 2:
-            ax.legend(loc='center right')
 
         textstr = '\n'.join((
             '$R_2\' =%.2f$' % (self.r2prime, ),
@@ -212,10 +210,10 @@ class AseFit():
         '''
         Remove indices where signal(au) = 0 and averages tau signal data where more than 1 dynamic collected
         '''
-        ind_rm = np.argwhere( (self._sigvec == 0) | (np.isin(self._taudata, data.params['rm_tau'])) ).flatten()
+        ind_rm = np.argwhere( (self._sigvec.flatten() == 0) | (np.isin(self._taudata, data.params['rm_tau'])) ).flatten()
         taudata_rm = np.delete(self._taudata, ind_rm)
         dtedata_rm = np.delete(self._dtedata, ind_rm)
-        sigvec_rm = np.delete(self._sigvec, ind_rm)
+        sigvec_rm = np.delete(self._sigvec.flatten(), ind_rm)
 
         if (  data.params['nechoes']==1 & len(np.unique(taudata_rm)) != len(taudata_rm)): # Check if there are any repeat tau shifts
             taudata_m = np.unique(taudata_rm)
