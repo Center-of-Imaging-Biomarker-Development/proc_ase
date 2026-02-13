@@ -139,7 +139,7 @@ class VoxelFit():
         fig.set_facecolor('black')
 
         # ----- Save figure ----- #
-        fig.savefig(out_fpath + '/voxelmaps_qa.png', dpi=300)
+        fig.savefig(out_fpath + '/voxelmaps_qa.png', dpi=300, bbox_inches='tight')
 
     def _plot_randomfit(self, data, out_fpath):
         tau0_z1 = data.imdata[:, :, self._rand_vox[2], 0, 0]
