@@ -24,7 +24,13 @@ To run this processing pipeline, you'll need:
 - voxelwise_report.pdf
 
 ## Command options
-
+- hct: Hemocrit level (range: 0-1; default=0.41)
+- qa: Save intermediary files for quality assurance
+- e2_fpath: Filepath to 2nd echo of ASE data in NIFTI fromat if using dual-echo sequence
+- b0_fpath: Filepath to B0 map in NIFTI format if collected (must be same dimensions as ASE)
+- kern_sz: Kernel size for Gaussian smoothing (in voxels)
+- mot_cor: Motion correction using ANTs registration
+- rm_tau: Tau shifts to remove during modeling of signal data (i.e. 17 17.5 18)
 
 ## Example usage
 ```
