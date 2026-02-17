@@ -12,7 +12,9 @@ To run this processing pipeline, you'll need:
 - 4D ASE data in NIFTI format (first echo)
 >[!Note]
 >The ASE MR pulse sequence may include multiple echoes; and thus the acquired data is 5-dimensional (nx, ny, nz, ndyn, nechoes) which is not supported in NIFTI file format. When converted to NIFTI, the signal data will be split into multiple 4D files (nx, ny, nz ,ndyn) dependent on the number of echoes.
-
+- ASE sequence and modeling parameters in YAML format
+>[!Note]
+>The ASE sequence and modeling parameters must be provided in a YAML file that will be read by the pipeline. An example of the formatting can be found in config/ASE_HARMON.yml
 ## Outputs
 ### Voxel-wise
 - R2prime.nii.gz
