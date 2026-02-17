@@ -34,7 +34,7 @@ To run this processing pipeline, you'll need:
 
 ## Example usage
 ```
-python proc_ase.py --in_fpath [/PATH/TO/IMAGE/] --out_fpath [/PATH/TO/SAVE/FILES] --img_seq ASE_HARMON --hct 0.41 --qa
+python proc_ase.py --in_fpath /PATH/TO/IMAGE/ --out_fpath /PATH/TO/SAVE/FILES --img_seq ASE_HARMON --hct 0.41 --qa
 ```
 
 # Version history
